@@ -4,6 +4,7 @@ import "./App.css";
 import {
   Widget,
   addResponseMessage,
+  addLinkSnippet,
   setQuickButtons,
   renderCustomComponent,
 } from "react-chat-widget";
@@ -15,6 +16,8 @@ import config from "./config";
 
 import logo from "./logo.svg";
 
+const TestComponent = ({text}) => (<div>{text}</div>);
+
 class Image extends Component {
   render() {
     return <img alt="placeholder" src={this.props.src}></img>;
@@ -23,37 +26,51 @@ class Image extends Component {
 
 function App() {
   useEffect(() => {
-    addResponseMessage("Welcome to this awesome chat!");
+    addResponseMessage("Hi, how could I help you today?");
   }, []);
 
   const handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
     axios
-      .get(
-        `https://childbenefittestresource.cognitiveservices.azure.com/luis/prediction/v3.0/apps/fa7debfd-7950-49ae-89e3-2a541b71b0ec/slots/production/predict?subscription-key=f96251a858b14671a8f4a9902c3ceaea&verbose=true&show-all-intents=true&log=true&query=${newMessage}`
+      .post(
+        `http://localhost:5000/api/df_text_query`, {
+          text: `${newMessage}`
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        }
       )
       .then((res) => {
-        const topIntent = res.data.prediction.topIntent;
-        addResponseMessage(topIntent);
-        const testValue = [{ label: "abc", value: "123" }];
-        setQuickButtons(testValue);
-        const custom = (
-          <Chatbot
-            config={config}
-            actionProvider={ActionProvider}
-            messageParser={MessageParser}
-          />
-        );
-        const botProps = {
-          config: { config },
-          actionProvider: { ActionProvider },
-          messageParser: { MessageParser },
-        };
-        // renderCustomComponent(Chatbot, botProps);
-        renderCustomComponent(Image, {
-          src:
-            "https://www.freecodecamp.org/news/content/images/size/w2000/2020/07/wooden-robot-6069-1.jpg",
-        });
+        // const topIntent = res.data.prediction.topIntent;
+        console.log(res.data)
+        const result = res.data.result;
+        addResponseMessage(result);
+        addLinkSnippet({
+          title: 'My awesome link',
+            link: 'https://github.com/Wolox/react-chat-widget',
+            target: '_blank'
+        })
+        renderCustomComponent(TestComponent, { text: "https://github.com/Wolox/react-chat-widget" });
+
+
+
+
+
+        // const testValue = [{ label: "abc", value: "123" }];
+        // setQuickButtons(testValue);
+        // const custom = (
+        //   <Chatbot
+        //     config={config}
+        //     actionProvider={ActionProvider}
+        //     messageParser={MessageParser}
+        //   />
+        // );
+        // renderCustomComponent(Image, {
+        //   src:
+        //     "https://www.freecodecamp.org/news/content/images/size/w2000/2020/07/wooden-robot-6069-1.jpg",
+        // });
       });
     // Now send the message throught the backend API
   };
@@ -63,8 +80,8 @@ function App() {
       <Widget
         handleNewUserMessage={handleNewUserMessage}
         profileAvatar={logo}
-        title="My new awesome title"
-        subtitle="And my cool subtitle"
+        title="Goverment of Manitoba"
+        subtitle="Support team"
       />
     </div>
   );

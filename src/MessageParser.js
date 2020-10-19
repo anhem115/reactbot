@@ -12,12 +12,19 @@ class MessageParser {
       this.actionProvider.greet();
     }
     axios
-      .get(
-        `https://childbenefittestresource.cognitiveservices.azure.com/luis/prediction/v3.0/apps/fa7debfd-7950-49ae-89e3-2a541b71b0ec/slots/production/predict?subscription-key=f96251a858b14671a8f4a9902c3ceaea&verbose=true&show-all-intents=true&log=true&query=${message}`
+      .post(
+        `localhost:5000/api/df_text_query`, {
+          text: `${message}`
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
       )
       .then((res) => {
-        const topIntent = res.data.prediction.topIntent;
-        this.actionProvider.confirmQuestion(`You want to ${topIntent}`);
+        const topIntent = res.data.intent;
+        this.actionProvider.confirmQuestion(`${res.data.result}`);
       });
   }
 }
