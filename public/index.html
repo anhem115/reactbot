@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta property="og:title" content="Manitoba Vital Statistics Agency | Province of Manitoba">
+  <meta property="og:url" content="http://vitalstats.gov.mb.ca/">
+  <meta property="og:site_name" content="Province of Manitoba - Manitoba Vital Statistics Agency">
+  <meta property="og:description" content="Province of Manitoba - Manitoba Vital Statistics Agency">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:image" content="//www.gov.mb.ca/templates/en/common/images/mb-logo.png">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="//www.gov.mb.ca/asset_library/manitoba.ico">
+  <link href="//www.gov.mb.ca/templates/en/common/css/main.css" id="mainstyles" rel="stylesheet" type="text/css">
+  <link href="//www.gov.mb.ca/templates/en/common/css/department.css" id="departmentstyles" rel="stylesheet"
+    type="text/css">
+  <script src="//www.gov.mb.ca/templates/en/common/js/jquery.min.js" type="text/javascript"></script>
+  <script src="//www.gov.mb.ca/templates/en/common/js/jquery.dropotron.min.js"></script>
+  <script src="//www.gov.mb.ca/templates/en/common/js/animatedcollapse.js"></script>
+  <script src="//www.gov.mb.ca/templates/en/common/js/sidemenu3.js"></script>
+  <link rel="stylesheet" type="text/css" href="//www.gov.mb.ca/templates/en/common/js/slicknav/slicknav.min.css">
+  <script src="//www.gov.mb.ca/templates/en/common/js/slicknav/jquery.slicknav.min.js"></script>
+  <script type="text/javascript" src="//www.gov.mb.ca/templates/en/common/js/webpublishing2016.js"></script>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-593e9dcac20e79bd"></script>
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,12 +48,15 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>React App</title>
+  <!-- <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script> -->
+</head>
+
+<body class="template-en-three-column page-knom">
+  <div id="root"></div>
+  <!-- <df-messenger intent="WELCOME" chat-title="Goverment of Manitoba" agent-id="c4566157-549e-4cf9-b5f3-1cfcc1b46bec"
+    language-code="en"></df-messenger> -->
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -39,5 +66,368 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  </body>
+  <div class="access-links">
+    <a rel="header navigation" accesskey="1" href="#navigation">Header</a>
+    <a rel="side bar navigation" accesskey="2" href="#sidemenu">Side Menu</a>
+    <a rel="main body navigation" accesskey="3" href="#content">Content</a>
+    <a rel="footer navigation" accesskey="4" href="#footernav">Footer</a>
+    <a rel="search" accesskey="0" href="#search">Search</a>
+  </div>
+  <div class="header">
+    <div class="wrapper">
+      <div class="top-links">
+        <a href="index.html?print" target="_blank" id="print">Printer Friendly</a><a href="index.fr.html"
+          id="language">Fran&ccedil;ais</a><a href="/sitemap.html">Site Map</a> <a
+          href="https://www.gov.mb.ca/contact/">Contact Government</a>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="logo">
+        <a href="//www.gov.mb.ca/index.html" title="Logo for Government of Manitoba"><img
+            src="//www.gov.mb.ca/templates/en/common/images/mb-logo.png" alt="Government of Manitoba"></a>
+      </div>
+      <div class="search">
+        <div class="form-field input-button">
+          <form method="GET" action="//gov.mb.ca/search/">
+            <label style='display:none' for='bsc-head-searchfield'>Keywords</label>
+            <input id="bsc-head-searchfield" class="text-input" name="q" type="search" value="" maxlength="200"
+              placeholder="Search for programs and online services" />
+            <input id="bsc-head-searchsubmit" class="btn" type="submit" value="Search" data-icon="search" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navigation"><a name="navigation"></a>
+    <div class="wrapper">
+      <nav class="nav">
+        <div class="nav_inner">
+          <ul>
+            <li class="dropdown"><a href="http://residents.gov.mb.ca/index.html">Resident and online services</a>
+              <ul class="dropotron">
+                <li><a href="http://residents.gov.mb.ca/index.html">Search Programs and Services</a></li>
+                <li><a href="http://residents.gov.mb.ca/forms.html">Forms</a></li>
+                <li><a href="http://residents.gov.mb.ca/publications.html">Publications</a></li>
+                <li><a href="http://residents.gov.mb.ca/findingwork.html">Finding Work</a></li>
+                <li><a href="http://residents.gov.mb.ca/lost_id.html">Lost Identification</a></li>
+                <li><a href="http://residents.gov.mb.ca/moving.html">Moving to or Around Manitoba</a></li>
+                <li><a href="http://residents.gov.mb.ca/communities.html">Communities around Manitoba</a></li>
+                <li><a href="http://residents.gov.mb.ca/maps.html">Maps</a></li>
+                <li><a href="http://residents.gov.mb.ca/onlineservices.html">Online Services</a></li>
+                <li><a href="http://residents.gov.mb.ca/socialmedia/index.html">Social Media Directory</a></li>
+                <li><a href="http://residents.gov.mb.ca/apps/index.html">Mobile Applications</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="https://www.gov.mb.ca/business/index.html">Business</a>
+              <ul class="dropotron">
+                <li><a href="https://www.gov.mb.ca/business/index.html">Search for Business Information</a></li>
+                <li><a href="https://www.gov.mb.ca/business/startingsmart/index.html">Starting a Business</a></li>
+                <li><a href="https://www.gov.mb.ca/business/businessresearch/index.html">Business Research</a></li>
+                <li><a href="https://www.gov.mb.ca/business/financing/index.html">Financing a Business</a></li>
+                <li><a href="https://www.gov.mb.ca/business/registration/index.html">Registration, Legal and
+                    Licencing</a></li>
+                <li><a href="https://www.gov.mb.ca/business/doingbusiness/index.html">Doing Business with Government</a>
+                </li>
+                <li><a href="http://www.entrepreneurshipmanitoba.ca/">Entrepreneurship Manitoba</a></li>
+                <li><a href="https://www.gov.mb.ca/business/bizpas/index.html">BizPaS</a></li>
+                <li><a href="http://bizpalmanitoba.ca/">BizPaL</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="https://www.gov.mb.ca/government/index.html">Government</a>
+              <ul class="dropotron">
+                <li><a href="https://www.gov.mb.ca/minister/premier/index.html">Premier</a></li>
+                <li><a href="https://www.gov.mb.ca/minister/index.html">Cabinet Ministers</a></li>
+                <li><a href="https://www.gov.mb.ca/government/departments.html">Departments</a></li>
+                <li><a href="https://www.gov.mb.ca/government/abc/index.html">Agencies, Boards and Commissions</a></li>
+                <li><a href="https://www.gov.mb.ca/government/proactive_disclosure.html">Proactive Disclosure</a></li>
+                <li><a href="https://www.gov.mb.ca/legislature/index.html">Legislative Assembly</a></li>
+                <li><a href="http://www.manitobacourts.mb.ca/">Manitoba Courts</a></li>
+                <li><a href="http://web2.gov.mb.ca/laws/index.php">Manitoba Laws</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="http://www.travelmanitoba.com/">Visitors</a>
+              <ul class="dropotron">
+                <li><a href="http://www.travelmanitoba.com/things-to-do/">Things to do</a></li>
+                <li><a href="http://www.travelmanitoba.com/places-to-go/">Places to Go</a></li>
+                <li><a href="http://www.travelmanitoba.com/where-to-stay/">Where to Stay</a></li>
+                <li><a href="http://www.travelmanitoba.com/events/">Events</a></li>
+                <li><a href="http://www.travelmanitoba.com/trip-essentials/">Trip Essentials</a></li>
+                <li><a href="http://www.travelmanitoba.com/trip-essentials/visitor-information-centres/">Visitor
+                    Information Center</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="container">
+    <div class="wrapper">
+      <div class="content">
+        <div class="introduction">
+          <div class="columns">
+            <div class="home_slider">
+              <div class="default-header">
+                <h1>Manitoba Vital Statistics Agency</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="breadcrumb" id="breadcrumb">
+          <ul>
+            <li><a class="breadcrumb" href="http://www.manitoba.ca/index.html">manitoba.ca</a></li>
+            <li>&gt; <a class="breadcrumb" href="/index.html">Manitoba Vital Statistics Agency</a></li>
+            <li>&gt; <a class="breadcrumb" href="#">Vital Statistics Home</a></li>
+          </ul>
+        </div>
+        <div class="columns col-3">
+          <div class="col-3-4" role="main">
+            <div class="col-inside-3">
+              <a name="top"></a><a name="Top"></a><a name="content"></a>
+              <div align="left" class="addthis_inline_share_toolbox"></div>
+              <div id="main-content">
+                <div id="ctl00_PlaceHolderMain_ctl01_label" style='display:none'>Page Content</div>
+                <div id="ctl00_PlaceHolderMain_ctl01__ControlWrapper_RichHtmlField" class="ms-rtestate-field"
+                  style="display:inline" aria-labelledby="ctl00_PlaceHolderMain_ctl01_label">
+
+                  <a name="content"></a><br><br>
+
+
+                  <h3><a href="online_certificate_application.html">Online Certificate Application</a></h3><br><br>
+
+
+                  <table style="background-color:#FCFF9D;">
+                    <tr>
+                      <td>
+
+
+                        <h3 class="gom-rteElement-H3"><strong>COVID-19 - Change to Service</strong></h3><br>
+
+
+                        The Province of Manitoba is taking proactive measures to help manage and minimize the spread of
+                        COVID-19, including social-distancing measures.<br><br>
+
+                        <strong>Unscheduled drop-in services at the Vital Statistics Agency are not available at this
+                          time. Please contact us for assistance, or to schedule an appointment.</strong><br><br>
+
+                        We are pleased to support you by phone at 204-945-3701 (in Winnipeg), 1-866-949-9296 (toll free)
+                        or email <a href="mailto:vitalstats@gov.mb.ca">vitalstats@gov.mb.ca</a>.<br><br>
+
+                        Certificates can be ordered online anytime here <a
+                          href="https://cambafsclient.gov.mb.ca/cambAFSClient/entry.m">https://cambafsclient.gov.mb.ca/cambAFSClient/entry.m</a>.<br><br>
+
+                        For accurate, up-to-date and fact-based information on COVID-19, please visit <a
+                          href="https://manitoba.ca/covid19/">manitoba.ca/covid19</a><br>
+
+                      </td>
+                    </tr>
+                  </table><br><br>
+
+
+                  <h1 class="gom-rteElement-H1">What we do</h1><br>
+
+                  The Vital Statistics Agency is responsible for administering and enforcing <i>The Vital
+                    Statistics Act, The Marriage Act, The Change of Name Act</i> and processing
+                  disinterments under <i>The Public Health Act</i>.<br><br>
+
+                  The Agency registers vital events (birth, death, marriage,
+                  stillbirth and change of name) in Manitoba and provides documents as proof of those events.
+                  Legislation protecting privacy governs who can access records held by the Agency.<br><br>
+
+                  Our database contains information from vital event records from 1882 to present for the Province
+                  of Manitoba. All of our records are held in perpetuity for all Manitoba events.<br><br>
+
+                  <hr class="gom-rteElement-HR"><br>
+
+                  <h3 class="gom-rteElement-H1">Hours of Operation</h3><br>
+
+                  The Vital Statistics Agency is open Monday to Friday, from 8:30 A.M. to 4:30 P.M. (Central
+                  Time).<br><br>
+                  The hours of operation are subject to any government-wide office closures (e.g. statutory
+                  holidays).<br><br>
+
+                  <table>
+                    <tr>
+                      <td><i>Address:</i></td>
+                      <td>Government of Manitoba Vital Statistics Agency</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>254 Portage Avenue</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>Winnipeg MB &nbsp;&nbsp;R3C 0B6</td>
+                    </tr>
+                  </table><br>
+
+                  <hr class="gom-rteElement-HR"><br>
+
+                  <h3 class="gom-rteElement-H1">Contact us</h3><br>
+
+                  <table style="width:500px">
+                    <tr>
+                      <td><i>Phone:</i></td>
+                      <td>204-945-3701</td>
+                      <td rowspan="3">General inquiries by phone 8:30am to 4:30pm, 7 days a week</td>
+                    </tr>
+                    <tr>
+                      <td><i>Toll Free:</i></td>
+                      <td>1-866-949-9296</td>
+                    </tr>
+                    <tr>
+                      <td><i>Fax:</i></td>
+                      <td>204-948-3128</td>
+
+                    </tr>
+                    <tr>
+                      <td><i>Email:</i></td>
+                      <td><a href="mailto:vitalstats@gov.mb.ca">vitalstats@gov.mb.ca</a></td>
+                      <td></td>
+                    </tr>
+                  </table><br>
+
+                  Calls to the Vital Statistics Agency are routed through an interactive voice response system (IVR),
+                  a computer automated switchboard that callers navigate using touch-tone key-presses provided by a
+                  vendor.
+                  Touch-tone presses connect callers with different phone lines, from which callers hear auto-messages
+                  upon
+                  connection or interact with the Agency’s live staff.<br><br>
+                  The vendor has been experiencing challenges with the system, which may be affecting the ability of
+                  callers to connect with the Vital Statistics Agency and/or auto-responses within the system.
+                  The vendor is working to resolve this. <br><br>
+                  If you receive a message between 8:30am and 4:30pm (and it is not a statutory holiday), that we are
+                  experiencing above average call volumes - please be advised that we are answering calls - you are
+                  unable to hold because our queue of callers is full. Please hang up and call back later.<br><br>
+
+                  <hr class="gom-rteElement-HR"><br>
+
+
+
+                  <h1 class="gom-rteElement-H1">Responsibilities</h1><br>
+
+                  <ul>
+                    <li>Birth Certificate
+                    <li>Change of Name Certificate
+                    <li>Death Certificate
+                    <li>Marriage Certificate
+                    <li><i><a href="http://web2.gov.mb.ca/laws/statutes/ccsm/c050e.php" target="blank">Change of Name
+                          Act</a></i>
+                    <li>Change of Name (PERSONAL)
+                    <li><i><a href="http://web2.gov.mb.ca/laws/statutes/ccsm/m050e.php" target="blank">Marriage
+                          Act</a></i>
+                    <li>Marriage Commissioners
+                    <li>Marriage Licence
+                    <li><i><a href="http://web2.gov.mb.ca/laws/statutes/ccsm/v060e.php" target="blank">Vital Statistics
+                          Act</a></i>
+                    <li>Common-law Certificate
+                  </ul><br><br>
+
+                  <a href="#content">back to top</a><br><br>
+
+
+                </div>
+              </div>
+              <div align="left" class="addthis_inline_share_toolbox"></div>
+            </div>
+          </div>
+          <div class="col-1-4 col-left">
+            <div class="col-inside-2">
+              <div class="col-content-2" id="sidemenu-column">
+                <a name="sidemenu" rel="Side Menu Navigation"></a>
+                <div class="col-content-1">
+                  <div class="narrow-title-green">Get Started</div>
+                </div>
+                <div class="col-content-1">
+                  <div class="section" id="sidemenu">
+                    <ul>
+                      <li class="on"><a href="index.html">Vital Statistics Home</a></li>
+                      <li><a href="online_certificate_application.html">Online Certificate Application</a></li>
+                      <li><a href="adoption.html">Adoption</a></li>
+                      <li><a href="change_of_name.html">Legal Change of Name</a></li>
+                      <li><a href="change_of_sex_designation.html">Change of Sex Designation</a></li>
+                      <li><a href="certificate_apps.html">Download Forms</a></li>
+                      <li><a href="birth_registration.html">Birth Registration</a></li>
+                      <li><a href="entitled.html">Who can apply for certificates</a></li>
+                      <li><a href="how_to_apply.html">How to Apply</a></li>
+                      <li><a href="certificates.html">Identity Certificates</a></li>
+                      <li><a href="division_registrar.html">Division Registrar Certificates</a></li>
+                      <li><a href="comm_certificates.html">Commemorative Certificates</a></li>
+                      <li><a href="fees_and_services.html">Fees and Services</a></li>
+                      <li><a href="getting_married.html">Getting Married / Marriage Licence Requirements</a></li>
+                      <li><a href="choosing_surname.html">Surname after marriage or common-law registration</a></li>
+                      <li><a href="common_law.html">Common-law Registry</a></li>
+                      <li><a href="genealogy.html">Genealogy</a></li>
+                      <li><a href="annual_report.html">Annual Reports</a></li>
+                      <li><a href="Query.php">Search the Database</a></li>
+                    </ul>
+                  </div>
+
+
+
+                </div>
+                <div class="col-content-1">
+                  <div class="narrow-title-green">Stay Connected</div>
+                  <div class="section" id="sc">
+                    <ul>
+                      <li><a id="facebook" href="https://www.facebook.com/ManitobaGovernment" target="_blank"><span>Join
+                            us on Facebook</span></a></li>
+                      <li><a id="twitter" href="https://twitter.com/MBGov" target="_blank"><span>Follow us on
+                            Twitter</span></a></li>
+                      <li><a id="rss" href="http://news.gov.mb.ca/news/index.rss" target="_blank"><span>Subscribe to our
+                            RSS</span></a></li>
+                      <li><a id="youtube" href="https://www.youtube.com/ManitobaGovernment" target="_blank"><span>View
+                            our videos on YouTube</span></a></li>
+                      <li><a id="flickr" href="https://www.flickr.com/photos/mbgov/" target="_blank"><span>View our
+                            photos on Flickr</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="wrapper">
+      <div class="footer-left">
+        <nav class="footer-nav">
+          <a name="footernav"></a>
+          <ul>
+            <li><a href="https://www.gov.mb.ca/accessibility/index.html"
+                title="Accessibility - Government of Manitoba">Accessibility</a></li>
+            <li><a href="https://www.gov.mb.ca/legal/disclaimer.html"
+                title="Disclaimer - Government of Manitoba">Disclaimer</a></li>
+            <li><a href="https://www.gov.mb.ca/legal/copyright.html"
+                title="Copyright - Government of Manitoba">Copyright</a></li>
+            <li><a href="https://www.gov.mb.ca/legal/privacy.html" title="Privacy - Government of Manitoba">Privacy</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer-nav">
+          <a name="footernav"></a>
+          <ul>
+            <li><a href="https://twitter.com/mbgov" target="_blank" title="Twitter - Government of Manitoba">Twitter</a>
+            </li>
+            <li><a href="https://www.facebook.com/manitobagovernment" target="_blank"
+                title="Facebook - Government of Manitoba">Facebook</a></li>
+            <li><a href="https://www.youtube.com/user/ManitobaGovernment" target="_blank"
+                title="YouTube - Government of Manitoba">YouTube</a></li>
+            <li><a href="https://www.flickr.com/photos/mbgov/" target="_blank"
+                title="Flickr - Government of Manitoba">Flickr</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-right">
+        <a href="https://www.gov.mb.ca/" title="Government of Manitoba" target="_blank"><img
+            src="//www.gov.mb.ca/templates/en/common/images/logo-government-of-manitoba.jpg"
+            alt="Government of Manitoba" title="Government of Manitoba"></a>
+      </div>
+    </div>
+  </div>
+  <div id="showtoggle" style="display: none;">Yes</div>
+</body>
+
 </html>

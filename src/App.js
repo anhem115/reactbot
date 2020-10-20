@@ -16,7 +16,7 @@ import config from "./config";
 
 import logo from "./logo.svg";
 
-const TestComponent = ({text}) => (<div>{text}</div>);
+const TestComponent = ({ text }) => <div>{text}</div>;
 
 class Image extends Component {
   render() {
@@ -26,37 +26,44 @@ class Image extends Component {
 
 function App() {
   useEffect(() => {
-    addResponseMessage("Hi, how could I help you today?");
+    addResponseMessage(
+      "Hi, how could I help you today? [I'm an inline-style link](https://www.google.com) <http://www.google.com>"
+    );
   }, []);
 
   const handleNewUserMessage = (newMessage) => {
     console.log(`New message incoming! ${newMessage}`);
     axios
       .post(
-        `http://localhost:5000/api/df_text_query`, {
-          text: `${newMessage}`
+        `http://localhost:5000/api/df_text_query`,
+        {
+          text: `${newMessage}`,
         },
         {
           headers: {
-            'Content-Type': 'application/json',
-          }
+            "Content-Type": "application/json",
+          },
         }
       )
       .then((res) => {
         // const topIntent = res.data.prediction.topIntent;
-        console.log(res.data)
+        console.log(res.data);
         const result = res.data.result;
-        addResponseMessage(result);
-        addLinkSnippet({
-          title: 'My awesome link',
-            link: 'https://github.com/Wolox/react-chat-widget',
-            target: '_blank'
-        })
-        renderCustomComponent(TestComponent, { text: "https://github.com/Wolox/react-chat-widget" });
-
-
-
-
+        const intent = res.data.intent;
+        if (intent === "BCCDC_SYSTEMRESPONSE_DEFAULT-FALLBACK-INTENT") {
+          addResponseMessage(result);
+          // addResponseMessage("Sorry");
+        } else {
+          addResponseMessage(result);
+        }
+        // addLinkSnippet({
+        //   title: "My awesome link",
+        //   link: "https://github.com/Wolox/react-chat-widget",
+        //   target: "_blank",
+        // });
+        // renderCustomComponent(TestComponent, {
+        //   text: "https://github.com/Wolox/react-chat-widget",
+        // });
 
         // const testValue = [{ label: "abc", value: "123" }];
         // setQuickButtons(testValue);
